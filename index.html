@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="js/main.js" defer></script>
+    <title>Tip calculator</title>
+
+    
+    
+</head>
+<body>
+    <h1 class="logo">
+        <span>spli</span>
+        <span>tter</span>
+    </h1>
+    
+    <div class="even-columns">
+        <div class="setting-column">
+            <form class="setting-form">
+
+                <div class="form-amount">
+                    <label for="amount" class="form-amount-label">Bill</label>
+                    <input type="text" class="form-amount-input">
+                </div>
+
+                <div class="form-tip">
+                    <label for="tip" class="form-tip-label">Select Tip %</label>
+                    <div class="tipBtn">5%</div>
+                    <div class="tipBtn">10%</div>
+                    <div class="tipBtn">15%</div>
+                    <div class="tipBtn">20%</div>
+                    <div class="tipBtn">25%</div>
+                    <input type="text" name="custom" id="custom" placeholder="Custom">
+                </div>
+
+                <div class="form-people">
+                    <label for="people" class="form-people-label">Number of People</label>
+                    <input type="text" class="form-people-input">
+                    <div class="error-message"></div>
+                </div>
+            </form>
+        </div>
+
+        <div class="calculator-column">
+            <div class="tip-amount">
+                <div class="title">
+                    <h2>Tip Amount</h2>
+                    <h3>/ person</h3>
+                </div>
+                <div class="amount"></div>
+            </div>
+
+            <div class="person-amount">
+                <div class="title">
+                    <h2>Total</h2>
+                    <h3>/ person</h3>
+                </div>
+                <div class="amount"></div>
+            </div>
+
+            <button class="reset" data-type="disable">Reset</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+    --space-mono: 'Space Mono', monospace;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-200: 0.75rem;
+    --fs-300: 0.875rem;
+    --fs-400: 1rem;
+    --fs-500: 1.25rem;
+    --fs-600: 1.5rem;
+    --fs-700: 2rem;
+    --fs-800: 2.5rem;
+    --fs-900: 3rem;
+
+    --fs-input: var(--fs-600);
+    --fs-amount: var(--fs-700);
+    --fs-logo: var(--fs-700);
+    --fs-title: var(--fs-300);
+
+    --clr-100: hsl(0, 0%, 100%);
+    --clr-200: hsl(189, 41%, 97%);
+    --clr-300: hsl(185, 41%, 84%);
+    --clr-400: hsl(184, 14%, 56%);
+    --clr-500: hsl(186, 14%, 43%);
+    --clr-600: hsl(183, 100%, 15%);
+    --clr-700: hsl(183, 100%, 22%);
+    --clr-800: hsl(172, 67%, 45%);
+
+    --clr-label: var(--clr-500);
+    --clr-tip-btn: var(--clr-600);
+    --clr-tip-btn-hover: var(--clr-800);
+    --clr-tip-btn-active: var(--clr-700);
+
+    --radius-lg: 1.25rem;
+    --radius-sm: 0.5rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: var(--clr-300);
+    font-family: var(--space-mono);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    padding-block: 2rem;
+    flex-direction: column;
+    color: var(--clr-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+}
+
+.even-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--clr-100);
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+@media (min-width: 900px) {
+
+    .even-columns {
+        flex-direction: row;
+        justify-content: space-between;
+        border-radius: var(--radius-lg);
+        max-width: min(80%, 60rem);
+        margin-inline: auto;
+    }
+
+    .setting-column,
+    .calculator-column {
+        width: 50%;
+    }
+}
+
+.setting-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* style the each div in the setting columns */
+.form-amount,
+.form-people {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-tip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.form-tip > label {
+    flex: 0 0 100%;
+}
+
+/* setting each label inside each setting div */
+.form-amount label,
+.form-tip label,
+.form-people label {
+    font-size: var(--fs-title);
+    font-weight: var(--fw-bold);
+    color: var(--clr-500);
+}
+
+/* setting each input inside each setting div */
+.form-amount input,
+.form-people input,
+.form-tip input {
+    border: none;
+    outline: none;
+    font-size: var(--fs-input);
+    color: var(--clr-600);
+    font-weight: var(--fw-bold);
+    padding: 0.5rem;
+    text-align: right;
+    font-family: var(--space-mono);
+    border-radius: var(--radius-sm);
+}
+
+.form-amount input {
+    background: var(--clr-200) url(../images/icon-dollar.svg) left no-repeat;
+}
+
+.form-people input {
+    background: var(--clr-200) url(../images/icon-person.svg) left no-repeat;
+}
+
+.form-tip input {
+    background: var(--clr-200);
+    max-width: 30%;
+}
+
+.form-tip .tipBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-600);
+    color: var(--clr-100);
+    font-size: var(--fs-input);
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    flex: 0 0 30%;
+    font-weight: var(--fw-bold);
+}
+
+/* calculation column styles */
+.calculator-column {
+    background-color: var(--clr-600);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    position: relative;
+}
+
+@media (min-width: 900px) {
+    .calculator-column {
+        margin-bottom: 0;
+    }
+}
+.tip-amount,
+.person-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calculator-column .title h2 {
+    color: var(--clr-200);
+    font-size: var(--fs-300);
+}
+
+.calculator-column .title h3 {
+    color: var(--clr-400);
+    font-size: var(--fs-200);
+}
+
+.calculator-column .amount {
+    color: var(--clr-800);
+    font-size: var(--fs-amount);
+    font-weight: var(--fw-bold);
+}
+.calculator-column > button {
+    display: inline-block;
+    width: 100%;
+    background-color: var(--clr-800);
+    border: none;
+    outline: none;
+    border-radius: var(--radius-sm);
+    color: var(--clr-600);
+    padding-block: 0.5rem;
+    font-family: var(--space-mono);
+    font-size: var(--fs-500);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+@media (min-width: 900px) {
+    .calculator-column > button {
+        position: absolute;
+        bottom: 2rem;
+        right: 50%;
+        transform: translateX(50%);
+        width: 80%;
+    }
+}
+
+/* error styling */
+input[type="text"].error {
+    border: 1px solid hsl(0, 97%, 77%);
+}
+
+.error-message {
+    font-size: var(--fs-200);
+    color: hsl(0, 97%, 77%);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.tipBtn.selected {
+    background-color: var(--clr-800);
+    color: var(--clr-600);
+    font-weight: var(--fw-bold);
+}
+
+button[data-type="disable"] {
+    background-color: hsl(183, 100%, 20%);
+    color: var(--clr-600);
+    cursor: none;
+}
+
+input[type="text"]:focus {
+    outline:1px solid hsl(172, 67%, 45%);
+}
